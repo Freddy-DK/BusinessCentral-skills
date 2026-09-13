@@ -1,0 +1,27 @@
+{
+  "name": "economic-to-business-central",
+  "title": "e-conomic → Business Central migration",
+  "tldr": "Migrates a Danish e-conomic bookkeeping into a Business Central company through the Origo Cloud Events connector — chart of accounts, posting setup, VAT, customers, items, transactions, sales invoices and bilag receipts — reconciling to the source exactly, with two PowerShell helpers for the receipt (bilag) side.",
+  "readme": "README.md",
+  "skill": "SKILL.md",
+  "prerequisites": {
+    "businessCentral": {
+      "deployment": "SaaS",
+      "minimumVersion": "28.0",
+      "notes": "A company with no posted entries. Use a sandbox first, always."
+    },
+    "apps": [
+      {
+        "name": "Origo Cloud Events Core",
+        "publisher": "Origo",
+        "required": true,
+        "notes": "MCP connector, connected and authenticated to your BC tenant. The ChangeLog Write Guard must be opened before you start and restored afterwards."
+      }
+    ],
+    "tools": [
+      "PowerShell 7+ (only for the bilag receipt scripts)",
+      "Entra ID app registration with API.ReadWrite.All (only for uploading receipts)"
+    ]
+  },
+  "tags": ["migration", "e-conomic", "finance", "origo", "danish", "bilag"]
+}

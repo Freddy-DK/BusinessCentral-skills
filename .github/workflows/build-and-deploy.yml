@@ -1,0 +1,67 @@
+name: Build skills index and deploy site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Allow committing the regenerated README back, and deploying to Pages.
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Only one concurrent deployment; don't cancel an in-progress one.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Generate skills index and site pages
+        shell: pwsh
+        run: ./scripts/Build-SkillIndex.ps1
+
+      - name: Commit regenerated files
+        shell: pwsh
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          $changed = git status --porcelain
+          if ($changed) {
+            git add -A
+            git commit -m "docs: regenerate skills index [skip ci]"
+            git push
+          } else {
+            Write-Host "Nothing to commit."
+          }
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

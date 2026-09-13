@@ -1,0 +1,18 @@
+title: Business Central Skills
+description: A collection of skills for Microsoft Dynamics 365 Business Central.
+theme: jekyll-theme-cayman
+
+# index.md is generated in CI by scripts/Build-SkillIndex.ps1. Each skill's own
+# README.md gets Jekyll front matter injected in place and is served at its
+# permalink (/skills/<name>/), so no page copies exist.
+exclude:
+  - README.md
+  - "**/SKILL.md"
+  - "**/skill.json"
+  - "**/scripts"
+  - "**/*.ps1"
+  - ".github"
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - vendor
