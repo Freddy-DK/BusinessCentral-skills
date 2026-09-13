@@ -1,0 +1,35 @@
+---
+# Overrides minima's default styles with a green accent, matching freddysblog.com.
+---
+@import "minima";
+
+$bc-green: #1f7a4d;
+$bc-green-dark: #14512f;
+
+a {
+  color: $bc-green;
+
+  &:visited { color: $bc-green; }
+  &:hover { color: $bc-green-dark; }
+}
+
+.site-title,
+.site-title:visited {
+  color: $bc-green !important;
+  font-weight: 600;
+}
+
+.site-nav .page-link {
+  color: $bc-green;
+
+  &:hover { color: $bc-green-dark; }
+}
+
+.site-header {
+  border-top: 5px solid $bc-green;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+h1, h2, h3 {
+  color: $bc-green;
+}

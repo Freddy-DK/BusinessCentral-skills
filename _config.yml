@@ -1,6 +1,11 @@
 title: Business Central Skills
 description: A collection of skills for Microsoft Dynamics 365 Business Central.
-theme: jekyll-theme-cayman
+author: Freddy Kristiansen
+theme: minima
+
+# Repo and sponsor links used by the custom header (_includes/header.html).
+github_repo: https://github.com/Freddy-DK/BusinessCentral-skills
+sponsor_url: https://github.com/sponsors/Freddy-DK
 
 # index.md is generated in CI by scripts/Build-SkillIndex.ps1. Each skill's own
 # README.md gets Jekyll front matter injected in place and is served at its
