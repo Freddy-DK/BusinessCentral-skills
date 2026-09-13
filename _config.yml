@@ -3,6 +3,10 @@ description: A collection of skills for Microsoft Dynamics 365 Business Central.
 author: Freddy Kristiansen
 theme: minima
 
+# Served at the apex custom domain (see CNAME), so the site lives at the root.
+url: "https://businesscentral-skills.com"
+baseurl: ""
+
 # Repo and sponsor links used by the custom header (_includes/header.html).
 github_repo: https://github.com/Freddy-DK/BusinessCentral-skills
 sponsor_url: https://github.com/sponsors/Freddy-DK
