@@ -1,7 +1,9 @@
 {%- comment -%}
 Custom minima header: adds external links (GitHub repo, Sponsor) alongside the
-home link. Based on minima's header.html markup.
+home link. Based on minima's header.html markup. The header and banner are
+wrapped in .site-top so they can be pinned together on listing pages.
 {%- endcomment -%}
+<div class="site-top">
 <header class="site-header" role="banner">
   <div class="wrapper">
     <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
@@ -17,10 +19,14 @@ home link. Based on minima's header.html markup.
       </label>
 
       <div class="trigger">
-        <a class="page-link" href="{{ "/" | relative_url }}">Business Central Skills</a>
         <a class="page-link" href="{{ site.github_repo }}">GitHub</a>
         <a class="page-link" href="{{ site.sponsor_url }}">Sponsor me</a>
       </div>
     </nav>
   </div>
 </header>
+
+<div class="site-banner">
+  <img src="{{ "/assets/bullseye.png" | relative_url }}" alt="Business Central Skills" />
+</div>
+</div>

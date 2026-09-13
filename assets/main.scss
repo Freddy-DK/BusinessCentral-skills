@@ -30,6 +30,26 @@ a {
   border-bottom: 1px solid #e8e8e8;
 }
 
+.site-banner {
+  max-width: $content-width;
+  margin: 0 auto;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+// On the home/listing page (body.sticky-header) the header and banner stay
+// pinned while the content scrolls. On skill pages they scroll away normally.
+.sticky-header .site-top {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #fff;
+}
+
 h1, h2, h3 {
   color: $bc-green;
 }
