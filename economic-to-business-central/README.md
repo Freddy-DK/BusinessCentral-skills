@@ -185,10 +185,10 @@ The full list, with the surrounding context, is in `SKILL.md`.
 
 ## Scope and limitations
 
-Written against Business Central 28.x and Origo Cloud Events 28.x, for a Danish
-(single-currency DKK, 25% VAT) e-conomic bookkeeping with foreign-currency customer invoices.
-It is **Danish-only**: the VAT and revenue-account logic is built around a Danish chart of
-accounts, and it has not been used against any other localisation.
+Written against Business Central 28.x and Origo Cloud Events 28.x. It is **Danish-only** by
+nature: e-conomic is a Danish-only bookkeeping system, so there is no such thing as a
+non-Danish e-conomic migration. The reference source was a single-currency (DKK, 25% VAT)
+bookkeeping with foreign-currency customer invoices.
 
 It handles customers, items and sales invoices. Vendor documents and purchase invoices were
 not exercised — the reference source posted all purchases as journal entries.
@@ -201,12 +201,11 @@ get no purchase VAT entries in BC. That is a deliberate trade-off, not an oversi
 
 ## Contributing
 
-This skill was built for a Danish (DKK, 25% VAT) e-conomic bookkeeping and is **not designed
-for other localisations** — the VAT and revenue-account specifics assume a Danish chart, so
-another country would need the posting-setup steps substantially reworked. Corrections and
-additions that stay within that Danish scope are welcome, particularly for vendor/purchase
-flows. If you hit a BC or Origo behaviour that cost you time, that is exactly the kind of
-thing this skill exists to record — open a PR against `SKILL.md`.
+This skill migrates from **e-conomic, which is a Danish-only bookkeeping system**, so the
+skill is Danish-only too — there is no non-Danish e-conomic to migrate from. Corrections and
+additions within that Danish scope are welcome, particularly for vendor/purchase flows. If you
+hit a BC or Origo behaviour that cost you time, that is exactly the kind of thing this skill
+exists to record — open a PR against `SKILL.md`.
 
 ## License
 
