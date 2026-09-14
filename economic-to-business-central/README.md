@@ -8,7 +8,7 @@ permalink: /skills/economic-to-business-central/
 
 A [Claude](https://claude.ai) skill that migrates a Danish **e-conomic** bookkeeping into a
 **Microsoft Dynamics 365 Business Central** company through the
-[Origo Cloud Events](https://origo.365.dk) MCP connector, plus two PowerShell helpers for the
+[Origo Cloud Events](https://marketplace.microsoft.com/en-us/product/web-apps/pubid.origo%7caid.origo_cloud_events_core%7cpappid.a629b897-7541-4562-bebb-c6122f15801c?tab=overview) MCP connector, plus two PowerShell helpers for the
 bilag (receipt) side.
 
 Written after the migration it describes, which reconciled to the source **exactly — zero
